@@ -12,7 +12,7 @@ const About = () => {
         end: "+=800 center",
         scrub: 0.5,
         pin: true,
-        markers: true,
+        // markers: true,
         pinSpacing: true,
       },
     });

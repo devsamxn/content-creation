@@ -9,7 +9,7 @@ function Hero() {
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [loadedVideos, setLoadedVideos] = useState(0);
-  const totalVideos = 4;
+  const totalVideos = 3;
   const nextVideoRef = useRef(null);
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -65,7 +65,10 @@ function Hero() {
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden">
+    <div id="hero" className="relative h-dvh w-screen overflow-x-hidden">
+      <h1 className="cursor-pointer absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 text-2xl font-playfair text-white italic">
+        Hover For More
+      </h1>
       {isLoading && (
         <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden">
           <div className="three-body">
@@ -83,7 +86,7 @@ function Hero() {
           <div className="mask-clip-path absolute top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2 z-50 size-64 curson-pointer overflow-hidden rounded-lg">
             <div
               onClick={handleMiniVdClick}
-              className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+              className=" cursor-pointer origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
             >
               <video
                 ref={nextVideoRef}

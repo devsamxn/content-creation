@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { useWindowScroll } from "react-use";
-const navItems = ["navItem1", "navItem2", "navItem3", "navItem4"];
+const navItems = ["hero", "about", "work", "uncover"];
 const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(true);

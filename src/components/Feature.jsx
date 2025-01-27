@@ -12,8 +12,8 @@ const BentoTilt = ({ children, className = "" }) => {
       itemRef.current.getBoundingClientRect();
     const relativeX = (e.clientX - left) / width;
     const relativeY = (e.clientY - top) / height;
-    const tiltX = (relativeY - 0.5) * 5;
-    const tiltY = (relativeX - 0.5) * -5;
+    const tiltX = (relativeY - 0.5) * 10;
+    const tiltY = (relativeX - 0.5) * -10;
     const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(0.98, 0.98, 0.98)`;
     setTransformStyle(newTransform);
   };
@@ -55,9 +55,9 @@ const BentoCard = ({ src, title, color }) => {
 
 const Feature = () => {
   return (
-    <section className="bg-black pb-52">
+    <section id="work" className="bg-black pb-52 -mb-10">
       <div className="container mx-auto px-3 md:px-10">
-        <div className="px-5 py-32 font-playfair">
+        <div className="px-5 py-20 font-playfair">
           <h1 className="text-6xl text-blue-50 uppercase">Our Works</h1>
           <h2 className="max-w-md text-2xl text-blue-50 opacity-50 italic ms-52">
             Our Creative Playground
@@ -71,7 +71,7 @@ const Feature = () => {
             desc="description1"
           />
         </BentoTilt>
-        <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
+        <div className="grid h-[135vh] grid-cols-2 grid-rows-2 gap-7">
           <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
               src="videos/feature-2.mp4"
